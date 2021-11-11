@@ -1,3 +1,0 @@
-Link para download do Git: https://git-scm.com/
-Link para sintaxe de MarkDown: https://gist.github.com/rxaviers/7360908
-O Git Bash é um terminal extendido para otimizart o uso do Git.
