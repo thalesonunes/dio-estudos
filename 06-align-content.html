@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Align Content</title>
+
+    <style>
+
+        body{
+            background-color: rgb(31, 18, 43);
+        }
+        
+        h1, h2 {
+            margin-top: 30px;
+        }
+
+        h1{
+            color: magenta;
+        }
+
+        .container{
+            height: 400px;
+            max-width: 300px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid magenta;
+        }
+
+        .item{
+            background-color: aquamarine;
+            padding: 0 5px;
+            margin: 5px;
+            flex: 1;
+            text-align: center;
+            color: indigo;
+        }
+
+        .stretch{
+            align-content: stretch;
+        }
+
+        .center{
+            align-content: center;
+        }
+
+        .flex-start{
+            align-content: flex-start;
+        }
+
+        .flex-end{
+            align-content: flex-end;
+        }
+
+        .around{
+            align-content: space-around;
+        }
+
+        .between{
+            align-content: space-between;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <h1>Align Content</h1>
+
+    <h2>Stretch - Comportamento Padrão</h2>
+    <div class="container stretch">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+
+    <h2>Center</h2>
+    <div class="container center">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+
+    <h2>Flex Start</h2>
+    <div class="container flex-start">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+
+    <h2>Flex End</h2>
+    <div class="container flex-end">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+
+    <h2>Space Around</h2>
+    <div class="container around">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+
+    <h2>Space Between</h2>
+    <div class="container between">
+        <div class="item">sint et amet ea officia veniam qui</div>
+        <div class="item">veniam qui qui quiveniam qui qui quiveniam qui qui qui</div>
+        <div class="item">officia veniam</div>
+        <div class="item">Sit sint et amet ea officia veniamveniam qui qui qui qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea officia veniam qui qui qui magna magna commodo.</div>
+        <div class="item">ea  qui magna magna commodo.</div>
+    </div>
+    
+    
+</body>
+
+</html>

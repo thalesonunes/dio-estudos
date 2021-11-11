@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Justify Content</title>
+
+    <style>
+
+        body{
+            background-color: rgb(31, 18, 43);
+        }
+        
+        h1 {
+            margin-top: 50px;
+        }
+
+        .container{
+            max-width: 500px;
+            border: 1px solid purple;
+            margin: 0;
+            display: flex;
+            margin-bottom: 10px;
+        }
+
+        .item{
+            background-color: orange;
+            margin: 5px;
+            text-align: center;
+            color: white;
+            padding: 5px;
+        }
+
+        .flex-start{
+            justify-content: flex-start;
+        }
+
+        .flex-end{
+            justify-content: flex-end;
+        }
+
+        .flex-center{
+            justify-content: center;
+        }
+
+        .space-between{
+            justify-content: space-between;
+        }
+
+        .space-around{
+            justify-content: space-around;
+        }
+
+        .column{
+            flex-direction: column;
+            min-height: 250px;
+        }
+
+    </style>
+</head>
+
+<body>
+    
+    <h1>Comportamento com ROW</h1>
+    <h2>Flex Start</h2>
+    <section class="container flex-start">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Flex End</h2>
+    <section class="container flex-end">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Flex Center</h2>
+    <section class="container flex-center">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Space Between</h2>
+    <section class="container space-between">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Space Around</h2>
+    <section class="container space-around">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <!– *************************************************** –>
+
+    <h1>Comportamento com COLUMN</h1>
+    <h2>Flex Start</h2>
+    <section class="container flex-start column">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Flex End</h2>
+    <section class="container flex-end column">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Flex Center</h2>
+    <section class="container flex-center column">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Space Between</h2>
+    <section class="container space-between column">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+
+    <h2>Space Around</h2>
+    <section class="container space-around column">
+        <div class="item">First</div>
+        <div class="item">Segundo</div>
+        <div class="item">Outro</div>
+        <div class="item">Mais um</div>
+        <div class="item">Ultimo item</div>
+    </section>
+</body>
+
+</html>
