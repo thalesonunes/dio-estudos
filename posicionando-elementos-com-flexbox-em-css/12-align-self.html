@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos Align-Self</title>
+
+    <style>
+
+        body{
+            background-color: rgb(31, 18, 43);
+        }
+        
+        h1, h2 {
+            margin-top: 30px;
+        }
+
+        h1{
+            color: magenta;
+        }
+
+        .container{
+            display: flex;
+            border: 2px solid greenyellow;
+            max-width: 500px;
+            margin-bottom: 20px;
+        }
+
+        .align-container{
+            align-items: center;
+        }
+
+        .item{
+            background-color: orange;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+
+            margin: 5px;
+            padding: 10px;
+        }
+
+        .center{
+            align-self: center;
+        }
+
+        .start{
+            align-self: flex-start;
+        }
+
+        .end{
+            align-self: flex-end;
+        }
+
+        .baseline{
+            align-self: baseline;
+        }
+
+        .stretch{
+            align-self: stretch;
+        }
+
+        .auto{
+            align-self: auto;
+        }
+
+        .direction{
+            flex-direction: column;
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Componentes em ROW</h1>
+    <h2>Auto</h2>
+    <div class="container align-container">
+        <div class="item auto">AAA</div>
+        <div class="item auto">1223</div>
+        <div class="item auto">Banana</div>
+        <div class="item auto">Isso mesmo que ela disse!</div>
+    </div>
+
+    <h2>Mix 1</h2>
+    <div class="container">
+        <div class="item stretch">AAA</div>
+        <div class="item start">1223</div>
+        <div class="item end">Banana</div>
+        <div class="item auto">Isso mesmo que ela disse!</div>
+        <div class="item center">1223</div>
+    </div>
+
+    <h2>Mix 2</h2>
+    <div class="container">
+        <div class="item center">AAA</div>
+        <div class="item start">1223</div>
+        <div class="item end">Banana</div>
+        <div class="item stretch">Isso mesmo que ela disse!</div>
+    </div>
+
+
+
+    <h1>Componentes em COLUMN</h1>
+    <h2>Auto</h2>
+    <div class="container align-container direction">
+        <div class="item auto">AAA</div>
+        <div class="item auto">1223</div>
+        <div class="item auto">Banana</div>
+        <div class="item auto">Isso mesmo que ela disse!</div>
+    </div>
+
+    <h2>Mix 1</h2>
+    <div class="container direction">
+        <div class="item stretch">AAA</div>
+        <div class="item start">1223</div>
+        <div class="item end">Banana</div>
+        <div class="item auto">Isso mesmo que ela disse!</div>
+        <div class="item center">1223</div>
+    </div>
+
+    <h2>Mix 2</h2>
+    <div class="container direction">
+        <div class="item center">AAA</div>
+        <div class="item start">1223</div>
+        <div class="item end">Banana</div>
+        <div class="item stretch">Isso mesmo que ela disse!</div>
+    </div>
+
+
+
+    
+</body>
+</html>
