@@ -1,0 +1,1052 @@
+JAVASCRIPT NINJA - ESTUDOS
+Aluno: Thales O. Nunes
+
+
+OPERADORES ARITMÉTICOS
+
++	adição
+-	subtração
+* 	multiplicação
+/ 	divisão
+%	retorna o inteiro restante da divisão dos dois operandos
+**	exponencial (exemplo: var resultado = 2 ** 3; //retornará 8)
+
+
+OPERADORES ARITMÉTICOS UNÁRIOS
+
+++	incremento de 1 (unário)
+--	decremento de 1 (unário)
++	tenta converter para número
+-	retorna valor negativo de seu operando
+
+
+OPERADORES RELACIONAIS
+
+=	atribuição
++=	atribuição de adição
+-=	atribuição de subtração
+*=	atribuição de multiplicação
+/=	atribuição de divisão
+%=	atribuição de resto
+**=	atribuição exponencial
+
+
+OPERADORES DE COMPARAÇÃO
+
+==	retorna verdadeiro caso os operandos sejam iguais
+!=	retorna verdadeiro caso os operandos sejam diferentes
+===	retorna verdadeiro se operandos forem iguais e mesmo tipo
+!==	retorna verdadeiro se operandos forem diferentes  no valor e no tipo
+>	retorna verdadeiro caso o operando da esquerda seja maior que o da direita
+>	retorna verdadeiro caso o operando da esquerda seja menor que o da direita
+>=	retorna verdadeiro caso o operando da esquerda seja maior que o da direita
+>=	retorna verdadeiro caso o operando da esquerda seja menor que o da direita
+
+
+OPERADORES LÓGICOS
+
+&&	o mesmo que “e”
+||	o mesmo que “ou”
+!	negação
+
+
+OPERADOR TERNÁRIO
+
+condição ? valor1 : valor2
+
+
+
+LITERAIS
+
+int		12
+float		1.2
+string	‘ninja’
+bool		true
+array		[1,2]
+object	{a:1}
+null
+
+
+ESTRUTURA LÉXICA
+	
+IDENTIFICADORES (inicial de variáveis ou funções)
+- ou $
+letras de “a” a “z”
+letras de “A” a “Z”
+Obs.: Javascript é “case sensitive” ou seja, diferencia caracteres maiúsculos de minúsculos. E geralmente é utilizado o estilo “camel case” para nomeação de variáveis e funções.
+
+CARACTERES ACEITOS
+letras de “a” a “z”
+números de 0 a 9
+Obs.: Javascript aceita qualquer caractere UNICODE, porém não é recomendada a utilização de caracteres não ocidentais e/ou comuns.
+
+PALAVRAS RESERVADAS
+
+
+break
+case
+catch
+class
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield
+enum
+implements
+interface
+let
+package
+private
+protected
+public
+static
+await
+abstract
+boolean
+byte
+char
+double
+final
+float
+goto
+int
+long
+native
+short
+synchronized
+throws
+transient
+volatile
+
+
+Além disso, os literais null, true, e false não podem ser usados como identificadores em ECMAScript.
+
+
+
+
+
+INSTRUÇÕES CONDICIONAIS
+
+As instruções em JavaScript geralmente são executadas em ordem sequencial, ou seja, a medida que aparece, mas há algumas exceções. Uma delas é quando se deseja controlar o fluxo, seja pela ordem ou pela não execução de parte do mesmo, nesse caso é usado as seguintes instruções:
+
+if		mesmo que “se”
+else		mesmo que “senão”
+else if	usado para testar mais de uma condição
+
+Exemplo: 
+
+var fruta = “banana”; 
+if (fruta == pera){ // verifica se a fruta é “pera”
+	console.log(“A fruta é pera”); // se for “pera”, essa linha é executada
+}else if (fruta == banana){ //senão, verifica se a fruta é “banana” 
+	console.log(“A fruta é banana”); //se for “banana”, essa linha é executada
+}else{ // senão, a linha abaixo será executada
+console.log(“A fruta é desconhecida”);
+}
+
+
+
+TIPOS PRIMITIVOS
+
+number	números
+string	textos
+boolean	true/false
+null		ausência de valor
+undefined	indefinido/inexistente
+
+
+TIPOS DE OBJETOS (conjunto de propriedades)
+
+Maneiras de declarar um objeto:
+
+
+{propriedade: “valor”}
+
+	var objeto = {propriedade1: “valor”, propriedade2: 10, propriedade3: true}
+
+Uma propriedade pode ser também uma string
+
+Exemplo:
+
+var objeto = { “New York Times”: “1961” }
+
+
+Acessando o valor de uma propriedade do objeto:
+
+
+Pela notação de ponto:
+
+	objeto.propriedade
+
+	Exemplo:
+	var pessoa = { nome: ‘Thales’, idade: 35, peso: 87}
+	pessoa.nome // retornará ‘Thales’
+	pessoa.idade // retornará 35
+pessoa.peso // retornará 87
+
+Além da notação de ponto, também é possível acessar uma propriedade através da notação de colchetes:
+
+Exemplo:
+pessoa[‘Thales’] // retornará ‘Thales’
+
+Adicionando uma nova propriedade após o objeto ter sido declarado:
+
+	pessoa.sexo = “Masculino”;
+	pessoa.cor = “branca”;
+
+
+MÉTODOS DE OBJETOS
+
+Método é uma função executada dentro do objeto.
+
+Maneira de declarar um método:
+
+	var pessoa = { 
+nome: “Thales”,
+sobrenome: “Nunes”,
+	idade: 35, 
+	peso: 87,
+	aniversario: function { pessoa.idade++ } // incrementa idade em +1
+	nomeCompleto: function {return nome + “ “ + sobrenome }
+	}
+
+
+Chamando o método de um objeto:
+
+	pessoa.aniversario(); // o valor de idade mudará para 36
+	pessoa.nomeCompleto(); // retornará o nome completo da pessoa
+
+
+“TRUTHY” E “FALSY”
+
+FALSY (type coercion)
+Exemplos: 
+undefined	indefinido
+null		nulo
+NaN		not a number (não um número)
+0		número zero (obs.: zero como string(“0”) não é um número zero)
+-0		número zero negativo
+‘’		vazio - aspas simples
+“”		vazio - aspas duplas
+false		falso
+
+TRUTHY
+Todos os outros valores diferentes de FALSY.
+Exemplos: 
+true		verdeiro
+{}		objeto vazio
+[]		array vazio
+1		qualquer número diferente de 0, inclusive negativo
+3.23		qualquer decimal diferente
+“0”		zero como string
+“false”	false como string
+Infinity	infinito positivo
+-Infinity	infinito negativo
+
+
+VERIFICANDO SE É “TRUE” OU “FALSE”
+Basta utilizar “!!” na frente do valor.
+Exemplos:
+	!!undefined // false
+	!!1 // true
+	!!NaN // false
+	!!”0” // true
+	!!0 // false
+
+
+PRECEDÊNCIA DE OPERADORES
+
+grouping			() // tudo que tiver agrupado entre parênteses
+negação e incremento	++ ou --
+multiplicação e divisão	* ou /
+relacional			<, <=, > e >=
+igualdade			==, !=, === e !==
+and				&&
+or				||
+condicional			?:
+assignment (atribuição)	=, +=, -= e *=
+
+
+CONDICIONAL TERNÁRIO
+
+condicao ? true : false;
+
+Exemplo de aplicação:
+
+var genero = “”;
+var pessoa = {sexo: “Masculino”};
+var genero = pessoa.sexo === “Feminino” ? “a” : “o”;
+
+
+ESCOPO - GLOBAL E LOCAL
+
+var carro; // variável está no escopo global
+function andar(){
+	var metros; // variável está no escopo local
+}
+
+Tudo que estiver no escopo global poderá ser acessado por qualquer função e/ou método. Apesar de parecer interessante, isso pode causar conflitos de variáveis, em algum projeto mais extenso. Já o que estiver no escopo local, ou seja, dentro de um objeto e ou função/método, não poderá ser acessado fora desse escopo. Além de ser descartado da memória pelo “garbage collector” após a função ter sido executada.
+
+É possível criar uma variável sem o uso da palavra reservada “var”, porém, quando o mesmo é feito, entende-se que essa variável pertence ao escopo global, mesmo quando é criada dentro de um escopo local. Ela vaza o escopo.
+
+Exemplo:
+
+function correr(){
+	km = 10;
+}
+
+Enquanto a função não for chamada, a variável não vaza o escopo, pois ela só será criada quando a função for chamada.
+
+	correr();
+
+Mas após a função ser chamada, é possível acessar essa variável criada sem o uso da palavra reservada “var”.
+
+	km // 10
+
+Isso pode causar conflitos com outra variável e ocupar um espaço desnecessário na memória, causando problemas de performance.
+
+OBS.: Todo argumento de função é de escopo local.
+
+
+RETORNO DE FUNÇÕES
+
+RETORNOS PRIMITIVOS
+string
+number
+boolean
+null
+undefined
+
+RETORNO DE ARRAYS E OBJETOS
+
+Além dos retornos primitivos, é possível também ter um retorno de arrays e objetos. Uma das vantagens desse tipo de retorno é a possibilidade da utilização dos métodos desses retornos.
+
+	Exemplo de aplicação com retorno de arrays:
+
+	function minhaFuncao (){ return [1,2,3] }; // [1,2,3]
+
+minhaFuncao()[1]; // 2 - Nesse caso foi possível acessar um valor específico dentro do array, utilizando seu índice.
+
+Exemplo de aplicação com retorno de objetos:
+
+	function minhaFuncao (){ return {
+			propriedade1 : 1,
+			propriedade2 : ‘Thales’,
+			propriedade3 : true
+} 
+};
+
+minhaFuncao().propriedade2; // ‘Thales’ - Nesse caso foi possível acessar uma propriedade específica dentro do objeto.
+
+ASSOCIANDO RETORNO A UMA VARIÁVEL
+
+Uma prática muito comum e útil é a associação do retorno de uma função a uma variável. Além dos valores e/ou propriedades, essa variável herdará também todos seus métodos.
+
+Exemplo:
+
+	function minhaFuncao (){ return {
+			propriedade1 : 23,
+			propriedade2 : ‘Frutas’,
+			propriedade3 : function(){return ‘Banana Azul’}
+} 
+};
+
+	var minhaVariavel = minhaFuncao();
+
+	Após a associação será possível utilizar seus métodos.
+
+	minhaVariavel.propriedade3(); // ‘Banana Azul’
+
+
+
+PAR METROS DE FUNÇÕES
+
+Assim como é possível retornar um array ou objeto de uma função, é possível também receber como parâmetro tanto um array como um objeto. 
+
+	Exemplo:
+
+	var objeto = { nome: ‘Thales’, idade: 35, profissao: ‘fotografo’ }
+
+	function receberPessoa ( parametro ){ 
+		
+return parametro.nome;
+}
+
+receberPessoa ( objeto );
+
+O retorno da função receberPessoa será ‘Thales’
+
+
+
+
+OPERADOR VÍRGULA
+
+Pode ser utilizado para separar instruções em uma única expressão.
+
+	Exemplo:
+
+	var a, b=2, c; 
+
+// Nesse exemplo foi utilizada a palavra reservada var uma única vez para fazer a declaração de três variáveis distintas apenas utilizando a vírgula para separá-las.
+
+
+
+ESTRUTURA CONDICIONAL SWITCH
+
+Switch tem a mesma função de if/else, porém com uma estrutura mais simplificada. Recomendada, principalmente em situação em que há diversas condições a serem avaliadas. Vale ressaltar que em switch é utilizado condicional “===”, que avalia também a igualdade de tipos.
+
+	Exemplo:
+
+	var condicao = 2;
+
+	switch(condicao){
+		
+		case 1:
+		console.log(‘Condição é igual a 1!’);
+		break;
+
+		case 2:
+		console.log(‘Condição é igual a 2!’);
+		break;
+
+case 3:
+		console.log(‘Condição é igual a 3!’);
+		break;
+
+		default:
+		console.log(‘Condição não encontrada!’);
+		break;
+};
+
+Caso a condição for 2, por exemplo, será percorrido em ordem crescente dos “cases”, verificando cada condição. E nesse caso ao chegar ao “case 2”, irá executar o código “console.log(‘Condição é igual a 2!’);” que irá imprimir na tela: ‘Condição é igual a 2!’ e na sequência executar o “break”, quebrando o switch, já que a condição já foi encontrada.
+
+Se a variável “condicao” não fosse igual a 1, 2 ou 3, seria executada a opção “default”, imprimindo na tela ‘Condição não encontrada!’.
+
+Vale ressaltar que a condição é uma string, e não importa em que ordem os "cases" serão apresentados.
+
+
+ESTRUTURAS DE REPETIÇÃO 
+
+WHILE
+
+É uma estrutura de código que fica se repetindo (em loop) até que uma condição seja estabelecida.
+
+	Exemplo:
+
+	var contador = 0;
+	while(contador < 3) // verifica se essa instrução é verdadeira
+{
+		console.log(contador); // imprime na tela o contador
+		
+contador++; // incrementa o contador
+
+// após o incremento, ela retornará a verificar se o contador é menor que 3.
+};
+
+// essa estrutura irá imprimir na tela:
+0
+1
+2
+
+O incremento e/ou alteração do valor da condição é bastante importante nessa estrutura, pois caso o estado da instrução não se altere, a código será executado em um loop infinito. Nesse caso, se permanecer 0, será impresso esse valor na tela infinitamente.
+
+	ZERO === false
+
+Como ‘0’(zero) é igual a false, então é possível simplificar a estrutura de loop em decremento:
+
+	Exemplo:
+
+	contator = 3;
+	while (contador--) // verifica se a condição é verdade
+{
+		console.log(contador); // imprime na tela o valor de contador
+}
+
+// na primeira vez vai verificar se 3 é verdadeiro
+// sendo verdadeiro, já decrementa o valor de contador
+// imprime na tela o valor de contador que será 2
+// volta ao início e verifica se 2 é verdadeiro
+// sendo verdadeiro, já decrementa o valor de contador
+// imprime na tela o valor de contador que será 1
+// volta ao início e verifica se 1 é verdadeiro
+// sendo verdadeiro, já decrementa o valor de contador
+// imprime na tela o valor de contador que será 0
+// volta ao início e verifica se 0 é verdadeiro
+// como zero é ‘false’, é quebrada a estrutura do loop
+
+DO / WHILE
+
+A diferença entre, do/while e while, é que no primeiro caso (do/while), é executado o bloco de repetição pelo menos uma vez antes de verificar se as instruções são verdadeiras.
+
+
+FOR IN
+
+Utilizada para percorrer uma propriedade de uma objeto.
+
+Sintaxe:
+
+var car = {
+	brand: ‘VW’,
+	model: ‘Gol’,
+	year: 2015
+};
+
+for (var propriedade in car){ // verifica se há essa propriedade em car
+	console.log( propriedade ); // retornará: //brand //model //year 
+	console.log( car[propriedade] ); // retornará: //VW //Gol //2015
+}
+
+
+
+OPERADOR MÓDULO
+
+O operador % (módulo)retorna o resto de uma divisão entre números inteiros.
+
+Exemplo:
+
+10 % 3 // retorna 1
+8 % 2 // retorna 0
+13 % 5 // retorna 3
+
+
+
+ARRAYS
+
+Um Array no JavaScript é um objeto com um construtor único, com uma sintaxe literal e com um conjunto adicional de propriedades e de métodos herdados de um protótipo de Array. Arrays em JavaScript são usados para armazenar vários valores em uma única variável.
+
+	Exemplo:
+
+	var meuArray = [‘Thales’, 35, ‘Masculino’, 1.82, true];
+
+Em Javascript o array aceita diversos tipos de dados num mesmo array, por isso, é considerado por muitos um “falso array” que se parece mais com um objeto com chaves numéricas.
+
+Lembrando que a estrutura de um objeto é:
+
+var meuObjeto = {chave1: valor1, chave2: valor2, chave3: valor3};
+
+Logo, o Array substitui a chave por um número em ordem crescente a partir do zero. No exemplo da variável meuArray, para acessar os dados:
+
+	meuArray[0]; // retornará ‘Thales’
+	meuArray[2]; // retornará ‘Masculino’
+	meuArray[4]; // retornará true
+
+
+ELEMENTO OBJETO DE UM ARRAY
+
+Caso um dos elementos de um array for um objeto, basta utilizar a notação de ponto após a notação de chaves.
+
+Exemplo:
+
+var arrayComObjeto = [“Thales”, {endereco: “Rua Canada 139”];
+
+arrayComObjeto[1].endereco; // retornará “Rua Canada 139”
+
+	
+	ELEMENTO FUNÇÃO DE UM ARRAY
+
+Caso um dos elementos de um array for uma função, basta utilizar notação de chaves com o índice desejado e posteriormente chamar a função, passando parâmetros caso necessário.
+
+Exemplo:
+
+var arrayComFuncao = [“Thales”, function soma(x,y){return x+y}];
+arrayComFuncao[1](5,3); // retornará 8
+
+	
+PROPRIEDADE LENGTH
+
+A propriedade length de um array retorna a quantidade de elementos contidos nesse array.
+
+Exemplo:
+
+var meuArray = [‘Thales’, 35, ‘Masculino’, 1.82, true];
+meuArray.length; // retornará 5
+
+
+PROPRIEDADE PUSH
+
+A propriedade push é utilizada para adicionar um elemento no final do array. Uma informação relevante é que ao utilizar o método push, ele retorna a propriedade length.
+
+	Exemplo:
+
+	var meuArray = [“Thales”, 35];
+	meuArray.push(“Masculino”); // retornará 3
+	meuArray; // retornará [“Thales”, 35, “Masculino”]
+
+
+
+ESTRUTURA DE REPETIÇÃO FOR
+
+A instrução for cria um loop que consiste em três expressões opcionais, dentro de parênteses e separadas por ponto e vírgula, seguidas por uma declaração ou uma sequência de declarações executadas em sequência.
+
+	Sintaxe:
+
+	for ( [inicialização]; [condição]; [expressão final] ){
+declaração;
+}
+
+Exemplo:
+
+for ( var num = 1; num <= 5; num++ ){
+	console.log(num);
+}
+
+// 1
+// 2
+// 3
+// 4
+// 5
+
+
+FUNÇÕES AVANÇADAS
+
+Sempre que for atribuir uma função a uma variável, dar nome a essa função. E de preferência com o mesmo nome da variável. Essa prática facilitará a buscar por erros no código. 
+	
+Exemplo:
+
+	var minhaFuncao = function minhaFuncao (){ return ‘Olá!’};
+
+Outra vantagem em nomear a função é ter acesso aos métodos dessa função. O que é não é possível caso ela não tenha um nome. 
+
+Exemplo:
+
+minhaFuncao(); // retornará ‘Olá!’
+minhaFuncao.name; // retornará minhaFuncao
+
+
+
+PROGRAMAÇÃO FUNCIONAL
+
+Programação funcional é o processo de construir software através de composição de funções puras, evitando compartilhamento de estados, dados mutáveis e efeitos colaterais. É declarativa ao invés de Imperativa.
+
+	RETORNO DE FUNÇÕES
+
+	function soma(x){
+	return function(y){
+	return x + y;
+};
+};
+
+var somaTotal = soma(2); 
+// associará a função interna e x com o valor de 2 a variável somaTotal
+
+somaTotal(3); 
+// associará o valor 3 a y da função interna resultando na soma de x e y
+// retornará o valor 5
+
+Outra maneira de invocar essas função de maneira mais simplificada seria:
+
+	soma(2)(3);
+	
+
+PASSANDO FUNÇÕES POR PAR METRO
+
+function mostrarFuncao ( funcaoParametro ) {
+	return funcaoParametro(); // executa a função passada por parâmetro
+}
+
+
+FUNÇÃO ASSOCIADA A UMA VARIÁVEL 
+
+var minhaFuncao = function (){ return “Javascript NINJA!” };
+// associa uma função a uma variável
+
+mostrarFuncao( minhaFuncao );
+// retornará “Javascript NINJA!”
+
+
+FUNÇÃO PURA 
+
+function minhaFuncao(){ return “Javascript NINJA!” };
+
+mostrarFuncao( minhaFuncao );
+// retornará “Javascript NINJA!”
+
+
+
+HOISTING (elevação)
+
+Basicamente, quando o Javascript compila todo seu código, todas as declarações de variáveis usando var são içadas/elevadas ao topo de suas funções/escopo local (se declaradas dentro de uma função), ou ao topo do escopo global (se declaradas fora de uma função) independentemente de onde a declaração foi feita. Isto é o que queremos dizer com “hoisting”.
+
+	VARIÁVEIS
+
+No caso de variáveis, elas são içadas ao topo, porém sem valor, portanto retornarão undefined caso sejam utilizadas.
+
+
+FUNÇÕES
+
+Já as funções literais, ou seja, as funções que contém nomes e não estão associadas a uma variável, podem ser utilizadas dentro de todo o escopo em que ela está contida.
+
+
+
+IIFE ( immediately-invoked function expression )
+
+Basicamente, é uma função auto-executável. Para que uma função se torne auto-executável, ela deve ser transformada em uma expressão. Uma das formas é envolver essa função por parênteses e invocar ela com parentes por dentro ou por fora.
+
+	Exemplo:
+	(function(){ return 2 + 3})(); // retornará 5
+(function(){ return 2 + 3}()); // retornará 5
+
+A vantagem de se usar essa técnica é manter códigos dentro de um escopo local, facilitando manutenção e evitando conflitos.
+
+
+
+WRAPPER OBJECTS
+
+Valores primitivos não são objetos.
+Para ser objeto é preciso ter propriedades e métodos.
+
+Mas é possível utilizar propriedades de em tipos primitivos:
+
+Exemplo: 
+var name = ‘Thales’;
+name.length; // 6
+
+CONSTRUTORES
+
+	var name = new String(“Thales”);
+	var age = new Number(35);
+	var ninja = new Boolean(true);
+
+Quando estamos utilizando uma propriedade de uma string literal, por exemplo, o que estamos utilizando é uma object wrapper, ou seja, um encapsulamento dessa string pelo construtor do objeto String, tornando-o provisoriamente em um objeto.
+
+
+
+TYPEOF
+
+typeof é uma propriedade que testa e retorna o tipo de um valor específico.
+
+	Exemplo:
+
+	typeof undefined; // ‘undefined’
+	typeof function(){}; // ‘function’
+	typeof true; // ‘boolean’
+	typeof 10; // ‘number’
+	typeof ‘JS Ninja’; // ‘string’
+	typeof NaN; // ‘number’
+
+	typeof {}; // ‘object’
+	typeof []; // ‘object’
+	typeof null; // ‘object
+
+Sim, ao testar null ele retorna como objeto. Esse é um erro na implementação do Javascript.
+
+Por isso é altamente recomendado o uso de typeof apenas com tipos primitivos.
+
+
+
+IN
+
+A propriedade “in” é utilizada para verificar a existência de uma determinada propriedade quando utilizada na estrutura de repetição “for”, mas pode ser utilizada em uma sintaxe para verificar se determinada propriedade existe dentro daquele objeto.
+
+	Exemplo:
+
+	var car = {
+	brand: ‘VW’,
+	model: ‘Gol’,
+	year: 2015
+};
+
+	console.log(‘doors’ in car); 
+// verifica se há a propriedade doors no objeto car 
+// retorna um valor booleano
+// retornará ‘false’
+
+
+
+SALTOS
+
+São instruções utilizadas para pular trechos de códigos. O “return”, por exemplo, é um dos saltos mais conhecidos e utilizados.
+
+
+RETURN
+Exemplo:
+
+function minhaFuncao (){ 
+	var number = 10;
+		if ( number === 10 ){
+	return true; // se number for igual a 10, saltará o ‘else’
+}else{
+	return false;
+};
+};
+
+
+BREAK
+
+Exemplo 1:
+
+var number = 10;
+
+switch( number ){
+case 1:
+	console.log(‘1’)
+	break;
+case 2:
+	console.log(‘2’)
+	break;
+case 10:
+	console.log(‘10’)
+	break;
+default:
+	console.log(‘default’)
+	break;
+
+};
+
+	Exemplo 2:
+
+	for (var 1 = 0; i < 10; i++){
+		if( i === 5 ){
+	break; // sairá do loop ‘for’ se i for igual a 5
+}
+		console.log( i );
+};
+//0 //1 //2 //3 //4
+
+
+CONTINUE
+
+Diferentemente do “break” e do “return” que quebram a instrução que está inserida, o “continue” apenas salta para a próxima instrução.
+
+Exemplo 2:
+
+	for (var 1 = 0; i < 10; i++){
+		if( i === 5 ){
+	continue; // saltará apenas a impressão do número 5
+}
+		console.log( i );
+};
+//0 //1 //2 //3 //4 //6 //7 //8 //9
+
+
+OBJETOS
+
+MUTÁVEIS
+
+Os objetos são mutáveis, ou seja, é possível fazer alterações nas propriedades do objeto. É possível fazer a troca de valores de uma propriedade e remoção ou acréscimo de uma propriedade específica.
+
+Exemplo:
+
+var objeto1 = {
+	propriedade1: ‘Banana’,
+	propriedade2: ‘Maçã’
+};
+
+objeto1.propriedade1 = ‘Uva’; 
+// alterará o valor da propriedade1 para ‘Uva’
+
+delete objeto1.propriedade1; // remove a propriedade1
+console.log(objeto1); // [propriedade2: ‘Maçã’]
+
+
+MANIPULADOS POR REFERÊNCIA
+
+Quando crio um novo objeto, associando os valores de um objeto já existente, e altero qualquer de suas propriedades, essa alteração se fará também na origem.
+
+Exemplo:
+
+var objeto1 = {
+	propriedade1: ‘Banana’,
+	propriedade2: ‘Maçã’
+};
+
+var objeto2 = objeto1;
+
+objeto2.propriedade1 = ‘Pera’; // alterará também na origem
+
+console.log(objeto1.propriedade1); // ‘Pera’
+console.log(objeto2.propriedade1); // ‘Pera’
+
+
+	FORMAS DE CRIAR UM OBJETO
+
+		LITERAL
+
+		var objeto = {prop1: 2, prop2: ‘banana’};
+
+
+COM CONSTRUTOR
+
+		var objeto1 = new Object();
+
+
+		COM PROTOTYPE (HERANÇA)
+
+		var objeto1 = {propriedade1: ‘uva’}
+var objeto2 = Object.create(objeto1);
+
+O objeto2 irá herdar as propriedades do objeto1.
+Se propriedade1 de objeto1 (objeto pai)) for alterada, também alterará em objeto2 (objeto filho).
+Porém, se a propriedade1 de objeto2 (objeto filho) for alterada, nada acontece no objeto1 (objeto pai).
+
+
+HAS OWN PROPERTY
+
+E nesse caso, quando for utilizado o “for in” para percorrer um objeto filho, ele também percorrerá as propriedades do objeto pai. Para que isso não acontece, deve ser utilizado o método de objeto chamado “hasOwnProperty” para verificar se a propriedade é do objeto filho, ou seja, do objeto em que deseja ser percorrido.
+
+	Sintaxe:
+	
+	for (var prop in objeto2){
+		objeto2.hasOwnProperty(‘propriedade1’);
+};
+
+
+	OBJECT.KEYS()
+
+“keys()” é uma propriedade de de Object que retorna um array com as chaves das propriedades. E por retornar um array, consequentemente herda os métodos e propriedades de um array também, como o “length”, por exemplo.
+
+	Exemplo:
+
+	var objeto1 = { name: ‘Thales’, age: 35, city: ‘Passos-MG’ }
+	Object.keys(objeto1); // retornará [ name, age, city ]
+	Object.keys(objeto1).length; // retornará 3
+
+
+IS PROTOTYPE OF
+
+O método “isPrototypeOf” verifica se o objeto é protótipo de algum outro.
+
+var obj1 = {x: 2, y: 5, z: 7}
+var obj2 = Object.create(obj1);
+var obj3 = Object.create(obj2);
+
+obj1.isPrototypeOf(obj2); // true
+obj1.isPrototypeOf(obj3); // true
+obj2.isPrototypeOf(obj3); // true
+obj2.isPrototypeOf(obj1); // false
+
+
+JAVASCRIPT OBJECT NOTATION
+
+JSON.stringify()
+
+O método JSON.stringify() converte valores em javascript para uma String JSON.
+
+	JSON.parse()
+
+O método JSON.parse() converte a string em objeto novamente.
+
+
+
+ARRAYS
+
+ADICIONANDO ITENS
+
+	PUSH
+
+		meuArray.push(‘Banana’); 
+// adiciona o item ‘Banana’ ao final do MeuArray
+
+CONCAT
+
+Uma outra maneira de adicionar item, porém sem modificar o array principal é utilizando o método concat(). Mas nesse caso ele apenas retorna um novo array concatenando com o valor passado em parâmetro.
+
+var meuArray = [‘Banana’, ‘Mamão’];
+	meuArray.concat(‘Uva’); // [‘Banana’, ‘Mamão’, ‘Uva’]
+
+	Usando concat(), é possível passar um novo array como parâmetro.
+
+	var meuArray = [‘Banana’, ‘Mamão’];
+	meuArray.concat([‘Uva’, ‘Maçã’, ‘Pêra’]); 
+// [‘Banana’, ‘Mamão’, ‘Uva’, ‘Maçã’, ‘Pêra’]
+
+UNSHIFT
+
+Outro método que adiciona itens a um array é o método unshift(). Porém, diferentemente de push() e concat(), o item será adicionado no início do array.
+
+var meuArray = [‘Livia’, ‘Rafael’, ‘Lilian’];
+meuArray.unshift(‘Thales’);
+// [‘Thales’, ‘Livia’, ‘Rafael’, ‘Lilian’]
+
+
+REMOVENDO ITENS
+
+	POP
+		var meuArray = [‘Thales’, ‘Livia’, ‘Rafael’, ‘Lilian’];
+meuArray.pop(); 
+// remove e retorna o último item de MeuArray
+// ‘Lilian’
+
+SHIFT
+	var meuArray = [‘Gabriela’, ‘Thales’, ‘Livia’, ‘Rafael’, ‘Lilian’];
+meuArray.shift(); 
+// remove e retorna o primeiro item do array
+// ‘Gabriela’
+	
+
+JUNTANDO ITENS
+
+	Para juntar itens de um array é utilizado o método join() e toString().
+
+	Exemplo: 
+
+	meuArray = [‘arroz’, ‘feijão’, ‘batata’, ‘macarrão’];
+meuArray.join(); 
+// retorna a junção dos itens em uma string, separado por vírgula
+// ‘arroz, feijão, batata, macarrão’
+
+É possível passar por parâmetro, o tipo de separador, caso não queira utilizar vírgula.
+
+Exemplo:
+
+	meuArray = [‘arroz’, ‘feijão’, ‘batata’, ‘macarrão’];
+meuArray.join(‘ + ’);
+// ‘arroz + feijão + batata + macarrão’
+
+O outro método utilizado para juntar itens de um array é o toString(). Funciona da mesma forma que o join, porém, não é possível passar nenhum parâmetro de separador.
+
+
+INVERTENDO ORDEM DE UM ARRAY
+
+	Para inverter a ordem de um array, é utilizado o método reverse(). Diferentemente do método join(), o método reverse() modifica o array.
+
+	Exemplo:
+
+	meuArray = [‘arroz’, ‘feijão’, ‘batata’, ‘macarrão’];
+	meuArray.reverse(); // modifica o array para ordem inversa
+	console.log(meuArray);
+	// [‘macarrão’, ‘batata’, ‘feijão’, ‘arroz’]
+
+
+ORDENANDO UM ARRAY
+	
+Para ordenar um array, é utilizado o método sort(). Este método também tem efeito colateral, modificando o array.
+
+	Exemplo:
+
+meuArray = [‘arroz’, ‘feijão’, ‘batata’, ‘macarrão’];
+meuArray.sort(); // ordena por ordem alfabética o array
+console.log(meuArray);
+// [‘arroz’, ‘batata’, ‘feijão’, ‘macarrão’ ]
+
+
+	
+
+CONTROLE DE FLUXO
+
+IF E ELSE
