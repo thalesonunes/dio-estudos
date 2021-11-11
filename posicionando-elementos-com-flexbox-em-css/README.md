@@ -1,0 +1,1 @@
+Neste curso você irá aprender como criar um layout inteiramente responsivo sem necessitar de auxilio de framework, apenas utilizando CSS e sua propriedade Flexbox. Ao final deste curso vocês será capaz de criar interfaces sem a necessidade definição de valores fixos, apenas flutuando e posicionando elementos.
