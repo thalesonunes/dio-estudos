@@ -1,3 +1,5 @@
+// Thales O. Nunes
+
 // Primeira solução
 // Invertendo a string existente e comparando o resultado com a string original
 

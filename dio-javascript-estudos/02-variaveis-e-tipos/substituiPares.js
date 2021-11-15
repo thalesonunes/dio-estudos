@@ -1,3 +1,5 @@
+// Thales O. Nunes
+
 function substituirNumerosPares(array) {
 
     if (!array.length) return console.log("Array vazio");

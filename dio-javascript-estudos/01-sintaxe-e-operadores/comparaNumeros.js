@@ -1,3 +1,5 @@
+// Thales O. Nunes
+
 function comparaNumeros(num1, num2) {
 
     if(num1 == null || num1 == undefined || num2 == null || num2 == undefined ){

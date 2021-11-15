@@ -1,3 +1,5 @@
+// Thales O. Nunes
+
 // ## Atividade 1: Alunos Aprovados
 
 // 1. Crie uma função que recebe o array `alunos` e um número que irá representar a média final;
