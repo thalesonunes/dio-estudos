@@ -21,3 +21,8 @@ function substituirNumerosPares(array) {
 
 substituirNumerosPares([2, 0, 3, 5, 22, 15, 3, 8]);
 substituirNumerosPares([]);
+
+var fruta = "banana";
+var fruta = "üva";
+
+console.log(fruta);
