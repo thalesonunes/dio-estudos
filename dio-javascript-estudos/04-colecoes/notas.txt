@@ -1,0 +1,26 @@
+// MAP
+
+Similar a um objeto, porém armazena dados com tipos diferentes.
+
+
+// SET
+
+Sets são estruturas que armazenam apenas valores únicos, diferentemente dos arrays que recebem valores iguais.
+
+    + Exemplos de métodos
+
+        const mySet - new Set();
+        
+        mySet.add(1) // adiciona
+        
+        mySet.has(1) // verifica se existe esse dado
+        
+        mySet.delete(1) // deleta esse dado
+
+    
+    + Diferença entre Set e Arrays
+
+        - Possui valores únicos
+        - Em vez da propriedade lenght, consulta-se o número de registros pela propriedade "size"
+        - Não possui os métodos map, filter, reduce, etc...
+        - Possui métodos diferentes (consultar documentação)
