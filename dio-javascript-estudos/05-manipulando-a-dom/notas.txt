@@ -1,0 +1,160 @@
+O QUE É O D.O.M.?
+
+Dom (Document Object Model) é um padrão de como acessar e modificar os elementos de um HTML de uma página.
+
+    Alguns dos elementos do D.O.M.:
+
+    - <hmtl>
+    - <head> 
+    - <body>
+    - <h1>
+    - <a>
+    - <href>
+
+    Obs.: Os elementos de um html seguem uma hierarquia, uma ramificação, onde a tag acima é chamada de mãe e a tag abaixo chamada de filha.
+
+    Exemplo: 
+
+        <body>
+            <header>
+                <h1></h1>
+            </header>
+        </body>
+
+        Nesse exemplo, a tag <header> é ao mesmo tempo, filha da tag <body> e mãe da tag <h1>
+
+-----------------------------------
+
+O QUE É O B.O.M.?
+
+Dom (Browser Object Model) é um padrão de como acessar e modificar os elementos que estão na janela do browser.
+
+-----------------------------------
+
+D.O.M VS B.O.M?
+
+O "documento" é apenas um dos elementos que compõem a janela (window) do browser.
+
+    Outros elementos do B.O.M.:
+
+    - document
+    - history
+    - location
+    - screen
+    - navigator
+
+-----------------------------------
+
+MÉTODOS
+
+    Os métodos são ultilizados para manipular os elementos de uma D.O.M.
+
+    E para determinar quais elementos serão selecionados para serem manipulados é preciso utilizar identificadores e eles podem ser de três tipos:
+
+        - tag - são os nós da árvore que compõe o D.O.M.
+        - id - é uma propriedade "identificadora" e única para uma determinada tag, utilizada para determinar caracteristicas para esse elemento específico
+        - class - é uma propriedade utilizada para classificar um conjunto de elementos com caracteristicas específicas
+
+    
+    Exemplo de métodos de seleção:
+ 
+        document.getElementById('titulo'); // irá retornar apenas um elemento com id="titulo"
+        document.getElementByTagName('header'); // irá retornar um array com todos elementos com a tag <header>
+        document.getElementByClassName('textos'); // irá selecionar todos elementos com class="textos"
+
+        document.querySelectorAll('primeira-classe .segunda-classe') // seletor múltiplo - irá retornar todos elementos com "primeira-classe" e "segunda-classe"
+        
+        document.querySelectorAll('li .opcao') // combinando para filtrar - nesse caso retornará todas as tags <li> que contem a classe "opcao"
+
+
+    Acionando ou deletando elementos:
+
+        document.createElement(element) // cria um novo elemento HTML
+        document.removeChild(element) // remove um elemento filho de uma tag mãe
+        document.appendChild(element) // adiciona um elemento filho a uma tag mãe
+        document.replaceChild(new, old) // substitui um elemento filho em uma tag mãe
+
+
+-----------------------------------
+
+ESTILOS
+
+    CLASSES
+
+    Element.classList
+
+        HTML base:
+
+        <div id="meu-elemento" class="velho-estilo">
+            <!-- código -->
+        </div>
+
+
+            const = meuElemento = document.getElementById('meu-elemento');
+
+            * ADD
+            meuElemento.classList.add("novo-estilo")
+            // adiciona a classe "novo-estilo"
+
+            * REMOVE
+            meuElemento.classList.remove("classe")
+            // remove a classe "velho-estilo"
+
+            * TOGGLE
+            meuElemento.classList.toggle("darkmode")
+            // adiciona a classe "darkmode" caso ela não faça parte da lista e remove caso ela faça parte
+
+        
+        HTML após as modificações:
+
+            <div id="meu-elemento" class="novo-estilo darkmode">
+                <!-- código -->
+            </div>
+
+
+    CSS
+    
+        É possível alterar configurações de CSS diretamente no HTML também.
+
+            document.getElementByTagName('p').style.color = "blue";
+
+        
+-----------------------------------
+
+EVENTOS
+
+    Eventos de mouse
+
+        - mouseover
+        - mouseout
+    
+    Eventos de click:
+
+        - click (click único)
+        - dbclick (click duplo)
+    
+    Eventos de atualização
+
+        - change
+        - load
+
+    Como aplicar:
+
+        No arquivo JS:
+
+            const botao = document.getElementById("meuBotao");
+
+            botao.addEventListener("click", outraFuncao); // quando o botão receber um "click" chamará a função "outraFuncao"
+        
+        No arquivo HTML:
+
+            Especifica a função a ser chamada diretamente no elemento HTML.
+
+            <html>
+            <body>
+                <h1 onclick="mudaTexto(this)">Clique Aqui!</h1> // o uso de this é para que seja executado dentro da própria tag
+                <script>
+                    function mudaTexto(id){ id.innerHTML = "Mudei!"; }                
+                </script>
+            </body>
+            </html>
