@@ -1,0 +1,124 @@
+MÓDULOS
+
+    O que são módulos em Javascript?
+
+        Módulos em JavaScript é uma forma de você compartilhar informações entre arquivos, 
+        dessa forma, todos os arquivos que realizarem a importação desse módulo poderão 
+        utilizar e usufruir de suas funções ou informações que foram expostas. Dessa maneira, 
+        evitamos ter que ficar carregando N arquivos .js em nosso HTML, além de não precisar 
+        se preocupar também com a ordem do carregamento.
+
+        Os módulos permitem que blocos de código como funções, classes e constantes em 
+        arquivos separados possam ser importados quando necessário, facilitando o processo 
+        de manutenção e reusabilidade de um projeto JavaScript.
+
+
+    Vantagens de usar módulos
+
+        * Organização do código
+        * Compartilhamento de variáveis em escopos diferentes
+        * Explicita as dependências dos arquivos
+
+
+    Exportando
+
+        No arquivo no qual declaramos o recurso que desejamos compartilhar usamos a instrução export:
+
+            export [o-que-queremos-compartilhar];
+
+        Named Exports
+
+            Pode ser utilizado usando a palavra "export" na frente de uma função ou váriavel, por exemplo.
+
+                export function mostraIdade(){};
+                export let banana;
+
+                ou
+
+                function mostraIdade(){};
+                function mostraNome(){};
+                function mostraPeso(){};
+                let uva;
+
+                export {
+                    mostraIdade;
+                    mostraNome;
+                    mostraPeso
+                    let uva;
+                }
+        
+        Default Exports
+
+            Só pode ter um default por arquivo, ele será o padrão.
+        
+            function mostraIdade(){};
+            function mostraNome(){};
+            function mostraPeso(){};
+
+            export {
+                    mostraIdade;
+                    mostraPeso
+                }
+            
+            export default mostraNome; // nesse caso o export padrão será o mostraNome
+
+
+
+    Importando
+
+        No arquivo em que desejamos utilizar o recurso compartilhado usamos a instrução import:
+
+            import [o-que-queremos-importar] from [nome-do-modulo];
+        
+        
+            Named Exports
+
+                import {funcao, variavel, clase} from './arquivo.js';
+
+            Deault Exports
+
+                import valorDeault from './arquivo.js';
+
+
+        Trocando nomes de imports:
+
+            É possível, caso necessário, dar apelidos para as importações.
+            Pode ser necessário quando ja exista uma função com o mesmo nome da função importada no arquivo de destino, por exemplo. 
+
+            Exemplo:
+
+                import {arquivo as Apelido} from './arquivo.js'
+
+                Apelido.metodo();
+        
+        Importando TUDO!
+
+            É possível importar tudo de um determinado arquivo utilizando o carectere "*".
+
+            Exemplo:
+
+                import * as INFOS from './arquivo.js';
+
+                INFOS.metodoImportado();
+
+                console.log(INFOS.variavelImportada)
+    
+
+    VINCULANDO AO HTML
+
+        Para vincular toda a estrutura feita em módulos, é necessário declarar no HTML o script main sendo do tipo "module".
+
+        Exemplo:
+
+            <script type="module" src="main.js"></script>
+
+        E para visualizar esse tipo de estrutura é preciso rodar os arquivos em um servidor ou utilizar o LiveServer do VSCode, por exmeplo.
+
+
+    CURIOSIDADES
+
+        - Módulos sempre estão em "strict mode"
+        - Podem ser utilizadas as extensões .js e .mjs
+        - Para testes locais é nessário utilizar um servidor
+        - Ao importar sempre lembre da extensão (.js e .mjs)
+        - Ao importar sempre utilize "./" como ponto de partida
