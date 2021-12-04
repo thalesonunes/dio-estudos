@@ -1,0 +1,140 @@
+COMPREENDENDO ORIENTAÇÃO A OBJETOS
+
+    PARADIGMAS
+
+        Imperativo
+
+            Focado em COMO irá resolver os problemas.
+
+            - Procedual
+            - Orientada a objetos
+            - Processamento paralelo
+
+        Declarativo
+
+            Focado em O QUE irá ser feito.
+
+            - Logic
+            - Funcional / Fluxo de dados
+            - Base de dados
+
+
+    ORIENTAÇÃO A objetos
+
+        Os programas são "objetos" que possuem uma série de propriedades.
+
+        Pilares:
+
+            - Herança
+            - Polimorfismo
+            - Encapsulamento
+            - Abstração
+        
+        ABSTRAÇÃO:
+
+            "Processo mental que consistem em isolar um aspecto determinado 
+            de um estado de coisas relativamente complexo, a fim de simplificar 
+            a sua avaliação, classificação ou para permitir a comunicação do mesmo."
+        
+        HERANÇA: 
+
+            O objeto filho herda propriedades e métodos do objeto pai.
+        
+        ENCAPSULAMENTO
+        
+            Cada classe tem propriedades e métodos independentes do restante do código.
+        
+        POLIMORFISMO
+
+            Objetos podem herdar a mesma clssse pai, mas se comportarem de forma 
+            diferente quando invocamos seus métodos.
+
+
+
+OOJS (Orientação a objetos em Javascript)
+
+    PROTÓTIPOS
+
+        Todos os objetos Javascript herdam propriedades e métodos de um prototype.
+        O objetc.prototype está no topo desta cadeia.
+
+            const objeto = {}
+            undefined
+            
+            objeto
+            {}
+                [[Prototype]]: Object
+                    constructor: ƒ Object()
+                    hasOwnProperty: ƒ hasOwnProperty()
+                    isPrototypeOf: ƒ isPrototypeOf()
+                    propertyIsEnumerable: ƒ propertyIsEnumerable()
+                    toLocaleString: ƒ toLocaleString()
+                    toString: ƒ toString()
+                    valueOf: ƒ valueOf()
+                    __defineGetter__: ƒ __defineGetter__()
+                    __defineSetter__: ƒ __defineSetter__()
+                    __lookupGetter__: ƒ __lookupGetter__()
+                    __lookupSetter__: ƒ __lookupSetter__()
+                    __proto__: (...)
+                    get __proto__: ƒ __proto__()
+                    set __proto__: ƒ __proto__()
+    
+    CLASSES
+
+        Nativamente não existe classes nos Javascript. Elas são, na verdade,
+        que se chama de "Syntatic Sugar", um sintaxe feita para facilitar a escrita.
+        Mas na verdade é que se está usando é um objeto e a herança se dá por protótipos.
+
+        SINTAXE ANTIGA (nativamente)
+            
+            var Meal = function(food){
+                this.food = food;
+            }
+
+            Meal.prototype.eat = function(){
+                return 'comer';
+            }
+        
+        SINTAXE ATUAL (a partir do EcmaScript 6)
+        
+            class Meal {
+                constructor (food){
+                    this.food = food;
+                }
+
+                eat(){
+                    return "comer";
+                }
+            }
+        
+        É utilizada a palavra reservada "extends" para declarar que determinada
+        classe está herdando propriedas de uma outra classe.
+
+        Exemplo:
+
+            class Animal {
+                constructor (type = 'animal'){
+                    this.type = type.
+                }
+
+                makesound(){
+                    console.log("Making animal sound")
+                }
+            }
+
+            class Cat extends Animal {
+                constructor(){
+                    super('cat')
+                }
+                
+                makesound(){
+                    super.makeSound()
+                    console.log("Meow!")
+                }
+            }
+
+            E a palavra "super" é utilizada para referenciar a classe pai dentro da classe filha
+            ou mesmo sobrescrever algum método herdado da classe pai.
+
+
+// 
