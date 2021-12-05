@@ -1,0 +1,171 @@
+DEFINIÇÃO - PROMISES E ASYNC/AWAIT
+
+    ASSINCRONICIDADE
+
+        Assíncrono - "Que não ocorre ou não se efetiva ao mesmo tempo."
+
+        Exemplo:
+
+            Síncrono - Estudantes vão para um curso em uma data e hora específica.
+
+            Assíncrono - Estudante fazendo um curso online e assistindo as aulas na velocidade e momento em que desejar.
+    
+
+        Por padrão o Javascript roda de maneira SÍNCRONA. Executando todo o código de forma linear,
+        executando um processo após outro. 
+
+        Já na forma ASSÍNCRONA, pode-se executar um processo enquanto outro esteja sendo executado.
+
+
+    PROMISES
+
+        Promise é um objeto usado para processamento assíncrono. 
+        Um Promise (de "promessa") representa um valor que pode estar disponível agora, no futuro ou nunca.
+
+        Inicialmente, seu valor é desconhecido. Ela pode, então, ser resolvida ou rejeitada.
+
+                            |-->     .then() (resolved)    |
+        Promise (pending)   |                              |--> Promise (pending)
+                            |-->    .catch() (rejected)    |
+        
+        Uma Promise representa um proxy para um valor que não é necessariamente conhecido quando a promessa é criada. Isso permite a associação de métodos de tratamento para eventos da ação assíncrona num caso eventual de sucesso ou de falha. Isto permite que métodos assíncronos retornem valores como métodos síncronos: ao invés do valor final, o método assíncrono retorna uma promessa ao valor em algum momento no futuro.
+
+        Um Promise está em um destes estados: 
+
+            - pending (pendente):       Estado inicial, que não foi realizada nem rejeitada.
+            - fulfilled (realizada):    sucesso na operação.
+            - rejected (rejeitado):     falha na operação.
+            
+            Uma promessa pendente pode se tornar realizada com um valor ou rejeitada por um motivo (erro). Quando um desses estados ocorre, o método then do Promise é chamado, e ele chama o método de tratamento associado ao estado (rejected ou resolved).  Se a promessa foi realizada ou rejeitada quando o método de tratamento correspondente for associado, o método será chamado, deste forma não há uma condição de competição entre uma operação assíncrona e seus manipuladores que estão sendo associados.
+        
+        Estrutura de uma Promise:
+
+            const myPromise = new Promise((resolve, reject) => {
+                window.setTimeout(() => {
+                    resolve(console.log('Resolvida!'));
+                }, 2000);
+            });
+        
+        Manipulação:
+
+            const myPromise = new Promise((resolve, reject) => {
+                window.setTimeout(() => {
+                    resolve(console.log('Resolvida!'));
+                }, 2000);
+            });
+
+            await myPromise
+                .then((result) => result + ' passando pelo THEN' )
+                .then((result) => result + ' e agora acabou!' )
+                .catch((err) => console.log(err.message));
+            
+            // após 2 segundos, retornará o valor
+            // "Resolvida passando pelo THEN e agora acabou!" 
+    
+
+    ASYNC / AWAIT
+
+        Funções assíncronas precisam dessas duas palavras chave, async e await.
+
+        Em primeiro lugar, temos a palavra-chave async, que você coloca antes de uma declaração de função para transformá-la em uma função assíncrona. Uma função assíncrona é uma função que espera a possibilidade de a palavra-chave await ser usada para invocar código assíncrono.
+
+        E para consumir o valor retornado quando a promise é finalizada, desde que esteja retornando uma promise, podemos usar um bloco .then()
+
+        A vantagem de uma função assíncrona só se torna aparente quando você a combina com a palavra-chave await. await só funciona dentro de funções assíncronas no código JavaScript regular, no entanto, pode ser usado por conta própria com JavaScript modules.
+
+        "await" pode ser colocado na frente de qualquer função assíncrona baseada em promise para pausar seu código nessa linha até que a promise seja resolvida e, em seguida, retornar o valor resultante.
+
+        Você pode usar await quando chamar qualquer função que retorne uma Promise, incluindo funções de API web.
+
+            Exemplo: 
+
+            async function resolvePromise(){
+
+                const myPromise = new Promise((resolve, reject) => {
+                    window.setTimeout(() => {
+                        resolve(console.log('Resolvida!'));
+                    }, 3000);
+                });
+
+                const resolved = await myPromise
+                    .then((result) => result + ' passando pelo THEN' )
+                    .then((result) => result + ' e agora acabou!' )
+                    .catch((err) => console.log(err.message));
+            
+                return resolved;
+            }
+
+        Utilizando o TRY/CATCH dentro de uma Promise
+
+            Exemplo: 
+
+            async function resolvePromise(){
+
+                const myPromise = new Promise((resolve, reject) => {
+                    window.setTimeout(() => {
+                        resolve(console.log('Resolvida!'));
+                    }, 3000);
+                });
+
+                let result;
+
+                try {
+                    result = await myPromise
+                        .then((result) => result + ' passando pelo THEN' )
+                        .then((result) => result + ' e agora acabou!' )
+                } catch (err) {
+                    result = err.message;
+                }
+            
+                return result;
+            }
+
+
+CONSUMINDO APIs
+
+    Definição de API:
+
+        API (Application Programming Interface) é uma forma de intermediar os resultados do back-end com o que é apresnetado no front-end. 
+        Pode ser acessado por meio de URLs.
+
+        É muito comum que as APIs retornem seus dados no formato .json, portanto precisamos tratar esses dados quando os recebermos.
+
+        JSON = JavaScript Object Notation
+
+
+        FETCH
+
+            fecth (url, options)
+                .then(response => responde.json())
+                .then(json => console.log(json))
+            
+            // retorna uma Promise
+        
+
+            Operações no banco (POST, GET, PUT, DELETE, etc)
+
+                Exemplo 01:
+                
+                    fetch('https://enedereco-api.com/', {
+                        method: 'GET',
+                        cache: 'no-cache'
+                    })
+                        .then(response => responde.json())
+                        .then(json => console.log(json))
+                    
+                    // retorna uma Promise
+
+                Exemplo 02
+
+                    fetch('https://enedereco-api.com/', {
+                        method: 'POST',
+                        cache: 'no-cache',
+                        body: JSON.stringify(data)
+                    })
+                        .then(response => responde.json())
+                        .then(json => console.log(json))
+                    
+                    // retorna uma Promise
+        
+        
+            A grosso modo, fetch são as URLs que vão trazer informações do banco dados.
