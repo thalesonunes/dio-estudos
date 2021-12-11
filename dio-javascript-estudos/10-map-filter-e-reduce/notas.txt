@@ -1,0 +1,103 @@
+MAP
+
+    O que é? 
+
+        O método map() chama a função callback recebida por parâmetro para cada elemento do Array original, em ordem, e constrói um novo array com base nos retornos de cada chamada. 
+
+        Parâmetros:
+
+        callback:   Função cujo retorno produz o elemento do novo Array. Recebe três argumentos:
+        valorAtual: O valor do elemento original do Array de origem. 
+        indice:     O índice do elemento atual que está sendo processado no array.
+        array:      O Array de origem.
+        thisArg:    Opcional. Valor a ser utilizado como o this no momento da execução da função callback.
+
+        - Cria um novo array
+        - Não modifica o array original
+        - Realiza as operações em ordem, o index zero até o final do array.
+
+            Exemplos:
+            
+            array.map(callback[, thisArg])
+            array.map(callback, thisArg) 
+                
+                Callback: função a ser executada em cada elemento
+                // callback (item, index, array)
+
+                thisArg(opcional): valor de 'this' dentro da função callback
+ 
+
+
+
+    MAP VS FOREACH
+
+        // Usando map() 
+        // cria um novo array
+
+            const array = [1,2,3,4,5];
+            array.map((item)  => item * 2 ); // retorno: [2,4,6,8,10]
+
+
+        // Usando forEach() 
+        // necessário um array auxiliar caso queira armazenar o resultado da operação
+
+            const array = [1,2,3,4,5];
+            forEach((item)  => item * 2 ); // retorno: undefined
+
+
+FILTER
+
+    O que é?
+
+        O método filter() cria um novo array com todos os elementos que passaram no teste implementado pela função fornecida.
+
+        - Cria um novo array
+        - Não modifica o array original
+        - Retorna uma lista apenas com os items que passaram pelo filtro
+
+        Sintaxe:
+
+            array.filter(callback, thisArg)
+
+                Callback: função a ser executada em cada elemento
+                // callback (item, index, array)
+
+                thisArg(opcional): valor de 'this' dentro da função callback
+        
+        Exemplo:
+
+            const frutas = ['maçã fuji', 'maça verde', 'laranja', 'abacaxi'];
+
+            frutas.filter((item) => item.include('maçã'));
+
+            // retorno: ['maçã fuji', 'maça verde'];
+            // na sintaxe, o item pode ter qualquer nome, por exemplo "fruta"
+
+
+REDUCE
+
+    O que é?
+
+        O método reduce() executa uma função reducer (fornecida por você) para cada elemento do array, resultando num único valor de retorno.
+
+        - Executa uma função em todos os elementos do array, retornando um valor único.
+
+        Sintaxe:
+
+            array.reduce(callbackFn, initialValue)
+
+                Callback: função a ser executada a partir do acumulador
+                InitialValue: valor sobre o qual o retorno final irá atuar
+        
+        Exemplo: 
+
+            const callback = function(accumulator, currentValue, index, array){
+                // fazer algo
+            }
+
+            array.reduce(callbackFn, initialValue)
+
+            accumulator/prevValue: acumulador de todas as chamadas de callbackFn
+            currentValue: elmento atual sendo acessado pela função
+
+
