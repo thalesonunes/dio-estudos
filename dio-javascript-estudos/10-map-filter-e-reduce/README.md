@@ -1,6 +1,6 @@
 # Map, Filter e Reduce
 
-Este repositório contém a atividade prática do Curso "Map, Filter e Reduce", que faz parte do Basecamp de Javascript cursadp ma plataforma de ensino [DIO](https://web.dio.me/).
+Este repositório contém a atividade prática do Curso "Map, Filter e Reduce", que faz parte do Basecamp de Javascript cursado na plataforma de ensino [DIO](https://web.dio.me/).
 
 ## Atividades
 
